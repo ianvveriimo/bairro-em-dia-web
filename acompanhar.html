@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acompanhar protocolo — Bairro em Dia</title>
+<meta name="description" content="Consulte o andamento da sua ocorrência pelo número de protocolo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="acompanhar">
+<header class="cabecalho">
+<div class="cabecalho__conteudo">
+<a class="cabecalho__logo" href="index.html"><svg class="cabecalho__logo-icone" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#0e9f6e"/><path d="M8 28V16l6-4 6 4v12M20 28V10l6-3 6 3v18M6 28h28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Bairro em Dia</a>
+<button class="cabecalho__botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Navegação principal">
+<ul class="cabecalho__menu" id="menu"><li><a class="cabecalho__link" href="index.html">Início</a></li><li><a class="cabecalho__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="cabecalho__link cabecalho__link--ativo" href="acompanhar.html" aria-current="page">Acompanhar</a></li><li><a class="cabecalho__link" href="sobre.html">Sobre</a></li><li><a class="cabecalho__link cabecalho__link--destaque" href="registrar.html">Registrar ocorrência</a></li></ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="secao"><div class="secao__conteudo">
+<h1 class="secao__titulo">Acompanhar protocolo</h1>
+<p class="secao__intro">Digite o código recebido ao registrar (exemplo: BED-2026-AB3K7M).</p>
+<div class="aviso" data-aviso-firebase hidden></div><br>
+<form class="consulta" data-consulta><label class="formulario__rotulo" for="protocolo" hidden>Protocolo</label><input class="consulta__entrada" id="protocolo" type="text" placeholder="BED-2026-XXXXXX" autocomplete="off"><button class="botao botao--primario" type="submit">Consultar</button></form>
+<div class="resultado" data-resultado aria-live="polite"></div>
+</div></section>
+</main>
+<footer class="rodape">
+<div class="rodape__conteudo">
+<section class="rodape__coluna"><h2 class="rodape__titulo">Bairro em Dia</h2><p>Plataforma de participação cidadã para registrar problemas urbanos e acompanhar cada resolução.</p></section>
+<nav class="rodape__coluna" aria-label="Links do rodapé"><h2 class="rodape__titulo">Navegação</h2><ul class="rodape__lista"><li><a class="rodape__link" href="index.html">Início</a></li><li><a class="rodape__link" href="registrar.html">Registrar ocorrência</a></li><li><a class="rodape__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="rodape__link" href="acompanhar.html">Acompanhar protocolo</a></li><li><a class="rodape__link" href="sobre.html">Sobre</a></li></ul></nav>
+<section class="rodape__coluna"><h2 class="rodape__titulo">Projeto acadêmico</h2><p>Programação Web Coding — Ciência da Computação.<br>Trabalho Final (AV2): HTML5, CSS3 e Firebase Firestore.</p></section>
+</div>
+<p class="rodape__direitos">&copy; <span data-ano>2026</span> Bairro em Dia. Projeto sem fins lucrativos. Fotografias e painéis são de terceiros e usados com finalidade educacional; veja os créditos no README.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/ocorrencias.js"></script>
+</body>
+</html>

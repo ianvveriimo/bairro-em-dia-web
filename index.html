@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início — Bairro em Dia</title>
+<meta name="description" content="Registre problemas urbanos e acompanhe a resolução pelo número de protocolo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="inicio">
+<header class="cabecalho">
+<div class="cabecalho__conteudo">
+<a class="cabecalho__logo" href="index.html"><svg class="cabecalho__logo-icone" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#0e9f6e"/><path d="M8 28V16l6-4 6 4v12M20 28V10l6-3 6 3v18M6 28h28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Bairro em Dia</a>
+<button class="cabecalho__botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Navegação principal">
+<ul class="cabecalho__menu" id="menu"><li><a class="cabecalho__link cabecalho__link--ativo" href="index.html" aria-current="page">Início</a></li><li><a class="cabecalho__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="cabecalho__link" href="acompanhar.html">Acompanhar</a></li><li><a class="cabecalho__link" href="sobre.html">Sobre</a></li><li><a class="cabecalho__link cabecalho__link--destaque" href="registrar.html">Registrar ocorrência</a></li></ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="banner" aria-labelledby="titulo-banner">
+<div class="banner__conteudo">
+<h1 class="banner__titulo" id="titulo-banner">Sua cidade melhor começa com sua participação.</h1>
+<p class="banner__texto">O Bairro em Dia conecta moradores e serviços públicos. Registre buracos, lixo, iluminação e outros problemas com foto e endereço, e acompanhe cada etapa até a resolução.</p>
+<div class="banner__acoes"><a class="botao botao--primario" href="registrar.html">Registrar ocorrência</a><a class="botao botao--contorno" href="acompanhar.html">Acompanhar protocolo</a></div>
+</div>
+</section>
+<div class="aviso" data-aviso-firebase hidden></div>
+<section class="secao" aria-labelledby="titulo-indicadores"><div class="secao__conteudo">
+<h2 class="secao__titulo" id="titulo-indicadores">Indicadores da cidade</h2>
+<p class="secao__intro">Números atualizados direto do banco de dados a cada visita.</p>
+<div class="painel">
+<article class="indicador indicador--registradas"><span class="indicador__numero" data-total>–</span><span class="indicador__rotulo">Ocorrências registradas</span></article>
+<article class="indicador indicador--pendentes"><span class="indicador__numero" data-pendentes>–</span><span class="indicador__rotulo">Pendentes</span></article>
+<article class="indicador indicador--andamento"><span class="indicador__numero" data-andamento>–</span><span class="indicador__rotulo">Em análise ou andamento</span></article>
+<article class="indicador indicador--resolvidas"><span class="indicador__numero" data-resolvidas>–</span><span class="indicador__rotulo">Resolvidas</span></article>
+<div class="painel__referencia">
+<img class="painel__imagem" src="images/dashboards/07_dashboard_smart_city.png" alt="Painel Smart City com gráficos de incidentes, coleta de lixo, energia e qualidade do ar" width="1366" height="1234">
+<div class="painel__texto"><h3>Monitoramento urbano em um só lugar</h3><p>Painéis como este são a referência do Bairro em Dia: dados da cidade organizados para que a gestão pública priorize o que mais pesa no dia a dia.</p></div>
+</div>
+</div>
+</div></section>
+
+<section class="secao secao--cinza" aria-labelledby="titulo-como"><div class="secao__conteudo">
+<h2 class="secao__titulo" id="titulo-como">Como funciona</h2>
+<ol class="passos">
+<li class="passo"><span class="passo__numero">1</span><h3 class="passo__titulo">Registre</h3><p>Preencha o formulário com foto, descrição e endereço do problema.</p></li>
+<li class="passo"><span class="passo__numero">2</span><h3 class="passo__titulo">Receba o protocolo</h3><p>Cada ocorrência ganha um número único para consulta.</p></li>
+<li class="passo"><span class="passo__numero">3</span><h3 class="passo__titulo">Acompanhe</h3><p>Veja a linha do tempo: pendente, em análise, em andamento e resolvida.</p></li>
+<li class="passo"><span class="passo__numero">4</span><h3 class="passo__titulo">Veja a mudança</h3><p>O bairro melhora e todos podem conferir o resultado.</p></li>
+</ol>
+<div class="dashboard"><img class="dashboard__imagem" src="images/dashboards/08_dashboard_cidade.png" alt="Painel escuro de gestão urbana com mapa de operações, alertas em tempo real e gráficos de tráfego" width="1024" height="1024"><p class="dashboard__legenda">Tecnologia aplicada à gestão urbana: mapa, alertas e indicadores em tempo real.</p></div>
+</div></section>
+
+<section class="secao" aria-labelledby="titulo-categorias"><div class="secao__conteudo">
+<h2 class="secao__titulo" id="titulo-categorias">O que você pode registrar</h2>
+<p class="secao__intro">Sete categorias cobrem os problemas mais comuns nas ruas e praças.</p>
+<ul class="categorias"><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18M5 17c1-4 4-6 7-6s6 2 7 6M12 4v4"/></svg><h3 class="categoria__titulo">Buracos nas ruas</h3><p class="categoria__descricao">Asfalto danificado e crateras que oferecem risco.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><h3 class="categoria__titulo">Iluminação pública</h3><p class="categoria__descricao">Postes apagados ou lâmpadas queimadas.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><h3 class="categoria__titulo">Limpeza urbana</h3><p class="categoria__descricao">Acúmulo de lixo e descarte irregular de resíduos.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg><h3 class="categoria__titulo">Esgoto a céu aberto</h3><p class="categoria__descricao">Esgoto exposto e riscos à saúde.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10a3 3 0 1 1-3 3M3 14h14a3 3 0 1 1-3 3"/></svg><h3 class="categoria__titulo">Vazamentos</h3><p class="categoria__descricao">Água escorrendo pelas vias e calçadas.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8M12 13c-4 0-6-3-6-6 4 0 6 2 6 6zM12 13c4 0 6-3 6-6-4 0-6 2-6 6zM5 21h14"/></svg><h3 class="categoria__titulo">Praças públicas</h3><p class="categoria__descricao">Bancos, brinquedos e áreas verdes sem cuidado.</p></li><li class="categoria"><svg class="categoria__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l5-12h8l5 12M12 8v12M8 14h8"/></svg><h3 class="categoria__titulo">Calçadas danificadas</h3><p class="categoria__descricao">Buracos e desníveis que impedem a passagem.</p></li></ul>
+</div></section>
+
+<section class="secao secao--cinza" aria-labelledby="titulo-ultimas"><div class="secao__conteudo">
+<h2 class="secao__titulo" id="titulo-ultimas">Últimas ocorrências</h2>
+<div class="ocorrencias" data-ultimas></div>
+<p><br><a class="botao botao--contorno" href="ocorrencias.html">Ver todas as ocorrências</a></p>
+</div></section>
+<dialog class="detalhes" data-dialogo aria-label="Detalhes da ocorrência"></dialog>
+</main>
+<footer class="rodape">
+<div class="rodape__conteudo">
+<section class="rodape__coluna"><h2 class="rodape__titulo">Bairro em Dia</h2><p>Plataforma de participação cidadã para registrar problemas urbanos e acompanhar cada resolução.</p></section>
+<nav class="rodape__coluna" aria-label="Links do rodapé"><h2 class="rodape__titulo">Navegação</h2><ul class="rodape__lista"><li><a class="rodape__link" href="index.html">Início</a></li><li><a class="rodape__link" href="registrar.html">Registrar ocorrência</a></li><li><a class="rodape__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="rodape__link" href="acompanhar.html">Acompanhar protocolo</a></li><li><a class="rodape__link" href="sobre.html">Sobre</a></li></ul></nav>
+<section class="rodape__coluna"><h2 class="rodape__titulo">Projeto acadêmico</h2><p>Programação Web Coding — Ciência da Computação.<br>Trabalho Final (AV2): HTML5, CSS3 e Firebase Firestore.</p></section>
+</div>
+<p class="rodape__direitos">&copy; <span data-ano>2026</span> Bairro em Dia. Projeto sem fins lucrativos. Fotografias e painéis são de terceiros e usados com finalidade educacional; veja os créditos no README.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/ocorrencias.js"></script>
+</body>
+</html>

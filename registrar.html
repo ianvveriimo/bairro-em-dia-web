@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registrar ocorrência — Bairro em Dia</title>
+<meta name="description" content="Formulário para registrar um problema urbano e receber um protocolo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="registrar">
+<header class="cabecalho">
+<div class="cabecalho__conteudo">
+<a class="cabecalho__logo" href="index.html"><svg class="cabecalho__logo-icone" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#0e9f6e"/><path d="M8 28V16l6-4 6 4v12M20 28V10l6-3 6 3v18M6 28h28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Bairro em Dia</a>
+<button class="cabecalho__botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Navegação principal">
+<ul class="cabecalho__menu" id="menu"><li><a class="cabecalho__link" href="index.html">Início</a></li><li><a class="cabecalho__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="cabecalho__link" href="acompanhar.html">Acompanhar</a></li><li><a class="cabecalho__link" href="sobre.html">Sobre</a></li><li><a class="cabecalho__link cabecalho__link--destaque cabecalho__link--ativo" href="registrar.html">Registrar ocorrência</a></li></ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="secao"><div class="secao__conteudo">
+<h1 class="secao__titulo">Registrar ocorrência</h1>
+<p class="secao__intro">Campos com * são obrigatórios. Ao enviar, você recebe um protocolo para acompanhar.</p>
+<div class="aviso" data-aviso-firebase hidden></div><br>
+<div class="aviso aviso--erro" id="aviso-conexao" hidden></div>
+<p class="contador" aria-live="polite"><strong id="contador-total">–</strong> ocorrência(s) já registrada(s) na plataforma · <strong id="contador-minhas">0</strong> neste aparelho</p>
+<div class="registro">
+<aside class="registro__lateral"><img class="registro__lateral-imagem" src="images/plataforma/06_celular_registro.jpg" alt="Homem sorrindo usando o celular, com a tela de um aplicativo de envio de problemas urbanos" width="1000" height="667"><div class="registro__lateral-texto"><h2 class="registro__lateral-titulo">Do celular, em um minuto</h2><p>Tire a foto, informe o CEP e descreva o problema. O endereço é preenchido automaticamente.</p></div></aside>
+<div>
+<form class="formulario" id="form-ocorrencia" novalidate onsubmit="return false">
+<div class="formulario__campo"><label class="formulario__rotulo" for="nome">Nome do solicitante *</label><input class="formulario__entrada" id="nome" type="text" autocomplete="name"><p class="formulario__erro" id="erro-nome"></p></div>
+<div class="formulario__campo formulario__campo--metade"><label class="formulario__rotulo" for="categoria">Categoria *</label><select class="formulario__entrada" id="categoria"><option value="">Selecione…</option><option>Buracos nas ruas</option><option>Iluminação pública</option><option>Limpeza urbana</option><option>Esgoto a céu aberto</option><option>Vazamentos</option><option>Praças públicas</option><option>Calçadas danificadas</option></select><p class="formulario__erro" id="erro-categoria"></p></div>
+<div class="formulario__campo formulario__campo--metade"><label class="formulario__rotulo" for="titulo">Título da ocorrência *</label><input class="formulario__entrada" id="titulo" type="text" maxlength="80"><p class="formulario__erro" id="erro-titulo"></p></div>
+<div class="formulario__campo"><label class="formulario__rotulo" for="descricao">Descrição detalhada *</label><textarea class="formulario__entrada formulario__entrada--area" id="descricao"></textarea><p class="formulario__erro" id="erro-descricao"></p></div>
+<div class="formulario__campo formulario__campo--terco"><label class="formulario__rotulo" for="cep">CEP *</label><input class="formulario__entrada" id="cep" type="text" inputmode="numeric" placeholder="00000-000" autocomplete="postal-code"><p class="formulario__erro" id="erro-cep"></p></div>
+<div class="formulario__campo formulario__campo--dois-tercos"><label class="formulario__rotulo" for="rua">Rua *</label><input class="formulario__entrada" id="rua" type="text" autocomplete="address-line1"><p class="formulario__erro" id="erro-rua"></p></div>
+<div class="formulario__campo formulario__campo--terco"><label class="formulario__rotulo" for="bairro">Bairro *</label><input class="formulario__entrada" id="bairro" type="text"><p class="formulario__erro" id="erro-bairro"></p></div>
+<div class="formulario__campo formulario__campo--terco"><label class="formulario__rotulo" for="numero">Número *</label><input class="formulario__entrada" id="numero" type="text" placeholder="Ou S/N"><p class="formulario__erro" id="erro-numero"></p></div>
+<div class="formulario__campo formulario__campo--terco"><label class="formulario__rotulo" for="cidade">Cidade *</label><input class="formulario__entrada" id="cidade" type="text"><p class="formulario__erro" id="erro-cidade"></p></div>
+<div class="formulario__campo formulario__campo--terco"><label class="formulario__rotulo" for="estado">Estado (UF) *</label><input class="formulario__entrada" id="estado" type="text" maxlength="2" placeholder="PI"><p class="formulario__erro" id="erro-estado"></p></div>
+<div class="formulario__campo"><label class="formulario__rotulo" for="foto">Fotografia do problema *</label><input class="formulario__entrada" id="foto" type="file" accept="image/*"><p class="formulario__erro" id="erro-foto"></p><img class="formulario__previa" id="previa" alt="Prévia da fotografia selecionada" hidden></div>
+<div class="formulario__acoes"><p class="aviso aviso--erro" id="aviso-envio" hidden></p><button class="botao botao--primario botao--largo" id="enviar" type="submit">Enviar ocorrência</button></div>
+</form>
+<section class="confirmacao" id="confirmacao" hidden aria-live="polite"><h2>Ocorrência registrada!</h2><p>Guarde o seu número de protocolo:</p><strong class="confirmacao__protocolo" id="protocolo-gerado"></strong><p class="aviso" id="aviso-local" hidden></p><div class="confirmacao__acoes"><a class="botao botao--primario" id="link-acompanhar" href="acompanhar.html">Acompanhar agora</a><a class="botao botao--contorno" href="registrar.html">Registrar outra</a></div></section>
+<section class="minhas" id="minhas" hidden><h2 class="minhas__titulo">Seus protocolos neste aparelho</h2><ul class="minhas__lista" id="minhas-lista"></ul></section>
+</div>
+</div>
+</div></section>
+</main>
+<footer class="rodape">
+<div class="rodape__conteudo">
+<section class="rodape__coluna"><h2 class="rodape__titulo">Bairro em Dia</h2><p>Plataforma de participação cidadã para registrar problemas urbanos e acompanhar cada resolução.</p></section>
+<nav class="rodape__coluna" aria-label="Links do rodapé"><h2 class="rodape__titulo">Navegação</h2><ul class="rodape__lista"><li><a class="rodape__link" href="index.html">Início</a></li><li><a class="rodape__link" href="registrar.html">Registrar ocorrência</a></li><li><a class="rodape__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="rodape__link" href="acompanhar.html">Acompanhar protocolo</a></li><li><a class="rodape__link" href="sobre.html">Sobre</a></li></ul></nav>
+<section class="rodape__coluna"><h2 class="rodape__titulo">Projeto acadêmico</h2><p>Programação Web Coding — Ciência da Computação.<br>Trabalho Final (AV2): HTML5, CSS3 e Firebase Firestore.</p></section>
+</div>
+<p class="rodape__direitos">&copy; <span data-ano>2026</span> Bairro em Dia. Projeto sem fins lucrativos. Fotografias e painéis são de terceiros e usados com finalidade educacional; veja os créditos no README.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/formularios.js"></script>
+<script>
+setTimeout(function () {
+  if (window.__bedPronto) return;
+  var a = document.getElementById("aviso-envio");
+  a.hidden = false;
+  a.textContent = "Os scripts do site não carregaram. Abra pelo Live Server (endereço http://127.0.0.1:5500/...), confira a internet e veja o erro em vermelho no Console (F12).";
+}, 2000);
+</script>
+</body>
+</html>

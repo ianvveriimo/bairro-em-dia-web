@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocorrências — Bairro em Dia</title>
+<meta name="description" content="Todas as ocorrências registradas pelos cidadãos, com filtros por categoria e situação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="ocorrencias">
+<header class="cabecalho">
+<div class="cabecalho__conteudo">
+<a class="cabecalho__logo" href="index.html"><svg class="cabecalho__logo-icone" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#0e9f6e"/><path d="M8 28V16l6-4 6 4v12M20 28V10l6-3 6 3v18M6 28h28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Bairro em Dia</a>
+<button class="cabecalho__botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Navegação principal">
+<ul class="cabecalho__menu" id="menu"><li><a class="cabecalho__link" href="index.html">Início</a></li><li><a class="cabecalho__link cabecalho__link--ativo" href="ocorrencias.html" aria-current="page">Ocorrências</a></li><li><a class="cabecalho__link" href="acompanhar.html">Acompanhar</a></li><li><a class="cabecalho__link" href="sobre.html">Sobre</a></li><li><a class="cabecalho__link cabecalho__link--destaque" href="registrar.html">Registrar ocorrência</a></li></ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="secao"><div class="secao__conteudo">
+<h1 class="secao__titulo">Ocorrências registradas</h1>
+<p class="secao__intro">Filtre por categoria e situação para ver o que já foi resolvido e o que ainda espera atendimento.</p>
+<div class="aviso" data-aviso-firebase hidden></div><br>
+<div class="aviso aviso--sucesso" data-exemplos hidden><p>O banco ainda não tem ocorrências. Para testar a página, grave 3 ocorrências de exemplo no seu Firestore:</p><button class="botao botao--primario botao--pequeno" type="button">Criar ocorrências de exemplo</button></div><br>
+<form class="filtros" onsubmit="return false">
+<div class="filtros__campo"><label class="formulario__rotulo" for="filtro-categoria">Categoria</label><select class="formulario__entrada" id="filtro-categoria"><option value="">Todas</option><option>Buracos nas ruas</option><option>Iluminação pública</option><option>Limpeza urbana</option><option>Esgoto a céu aberto</option><option>Vazamentos</option><option>Praças públicas</option><option>Calçadas danificadas</option></select></div>
+<div class="filtros__campo"><label class="formulario__rotulo" for="filtro-situacao">Situação</label><select class="formulario__entrada" id="filtro-situacao"><option value="">Todas</option><option value="pendente">Pendente</option><option value="analise">Em análise</option><option value="andamento">Em andamento</option><option value="resolvida">Resolvida</option></select></div>
+<span class="filtros__contagem" data-contagem aria-live="polite"></span>
+</form>
+<div class="ocorrencias" data-lista></div>
+</div></section>
+<dialog class="detalhes" data-dialogo aria-label="Detalhes da ocorrência"></dialog>
+</main>
+<footer class="rodape">
+<div class="rodape__conteudo">
+<section class="rodape__coluna"><h2 class="rodape__titulo">Bairro em Dia</h2><p>Plataforma de participação cidadã para registrar problemas urbanos e acompanhar cada resolução.</p></section>
+<nav class="rodape__coluna" aria-label="Links do rodapé"><h2 class="rodape__titulo">Navegação</h2><ul class="rodape__lista"><li><a class="rodape__link" href="index.html">Início</a></li><li><a class="rodape__link" href="registrar.html">Registrar ocorrência</a></li><li><a class="rodape__link" href="ocorrencias.html">Ocorrências</a></li><li><a class="rodape__link" href="acompanhar.html">Acompanhar protocolo</a></li><li><a class="rodape__link" href="sobre.html">Sobre</a></li></ul></nav>
+<section class="rodape__coluna"><h2 class="rodape__titulo">Projeto acadêmico</h2><p>Programação Web Coding — Ciência da Computação.<br>Trabalho Final (AV2): HTML5, CSS3 e Firebase Firestore.</p></section>
+</div>
+<p class="rodape__direitos">&copy; <span data-ano>2026</span> Bairro em Dia. Projeto sem fins lucrativos. Fotografias e painéis são de terceiros e usados com finalidade educacional; veja os créditos no README.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/ocorrencias.js"></script>
+</body>
+</html>

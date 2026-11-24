@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /ocorrencias/{protocolo} {
+      allow read: if true;
+      allow create: if request.resource.data.protocolo == protocolo
+                    && request.resource.data.situacao == 'pendente';
+      // Demonstração acadêmica: em produção, restrinja com Firebase Authentication.
+      allow update: if request.resource.data.protocolo == resource.data.protocolo;
+      allow delete: if false;
+    }
+  }
+}
